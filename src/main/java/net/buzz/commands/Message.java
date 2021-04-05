@@ -55,21 +55,24 @@ public class Message extends Command {
                         .replace("{receivername}", player2.getName()));
                 player.sendMessage(senderFormat);
                 player2.sendMessage(receiverFormat);
-                for (ProxiedPlayer staff : OPMessage.getInstance().getProxy().getPlayers()) {
+                ArrayList<ProxiedPlayer> staffList = new ArrayList<>(OPMessage.getInstance().getProxy().getPlayers());
+                staffList.remove(player);
+                String finalMessage = message;
+                staffList.forEach(staff -> {
                     if (SocialSpy.spy.contains(staff)) {
                         if (player2.getName().equalsIgnoreCase(this.instance.getMainConfiguration().getString("{receiver}"))) {
                             return;
                         }
                         String format = ChatUtil.colorize(this.instance.getMainConfiguration().getString("SocialSpy.Format")
                                 .replace("{sender}", player.getName())
-                                .replace("{receiver}", player2.getName()).replace("{message}", message)
+                                .replace("{receiver}", player2.getName()).replace("{message}", finalMessage)
                                 .replace("{senderserver}", senderServer));
                         if (SocialSpy.spy.contains(player) && player.getName().equalsIgnoreCase(this.instance.getMainConfiguration().getString("{sender}"))) {
                             return;
-                            }
+                        }
                         staff.sendMessage(format);
                     }
-                }
+                });
                 if (Reply.replyHash.containsKey(player) || Reply.replyHash.containsKey(player2)) {
                     Reply.replyHash.remove(player);
                     Reply.replyHash.remove(player2);
