@@ -1,0 +1,28 @@
+SocialSpy:
+  Enabled: "&aYou have enabled global socialspy!"
+  Disabled: "&cYou have disabled global socialspy!"
+  Format: "&7[{senderserver}] [{sender} > {receiver}] {message}"
+  AlreadyEnabled: "&cYou already have socialspy &nenabled&c!"
+  AlreadyDisabled: "&cYou already have socialspy &ndisabled&c!"
+  Usage: "&cUsage: /socialspy (on | off)"
+
+ToggleMsg:
+  Enabled: "&aYou have enabled toggle message and cannot send or receive messages!"
+  Disabled: "&cYou have disabled toggle message and can now send and receive messages!"
+  SelfDisabled: "&c[!] You cannot send messages while your messages are disabled!"
+  OtherDisabled: "&c[!] That player has their messages disabled!"
+
+Message:
+  MessageUsage: "&cUsage: /msg <player> [message]"
+  ReplyUsage: "&cUsage: /r [message]"
+  SenderFormat: "&8[&a{receiverserver}&8] &8[&a{sendername} &7> &a{receivername}&8] &f{message}"
+  ReceiverFormat: "&8[&a{senderserver}&8] &8[&a{sendername} &7> &a{receivername}&8] &f{message}"
+
+Errors:
+  NoReply: "&c[!] You have no one to reply to!"
+  NotFound: "&c[!] That player cannot be found on the network!"
+  MessageSelf: "&c[!] You cannot message yourself!"
+  NoPermission: "&c[!] You do not have permission to do this!"
+  StaffToggle: "&c[!] This command is disabled for staff!"
+
+reloadSuccess: "&aiMessage configuration has been successfully reloaded!" # Reload command is "/imsgreload"

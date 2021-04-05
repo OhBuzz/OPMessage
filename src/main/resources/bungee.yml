@@ -1,0 +1,4 @@
+name: OPMessage
+version: ${project.version}
+main: net.buzz.OPMessage
+author: buzz#9999
